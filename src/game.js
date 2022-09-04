@@ -1,6 +1,7 @@
 import Paddle from "./paddle.js";
 import InputHandler from "./input.js";
 import Ball from "./ball.js";
+import { buildLevel, level1 } from "./levels.js";
 
 export default class Game {
 	constructor(gameWidth, gameHeight) {
@@ -11,10 +12,12 @@ export default class Game {
 	start() {
 		this.ball = new Ball(this);
 		this.paddle = new Paddle(this);
+		this.bricks = buildLevel(level1, this);
 
 		this.gameObjects = [
 			this.paddle,
-			this.ball
+			this.ball,
+			...this.bricks
 		];
 
 		new InputHandler(this.paddle);
