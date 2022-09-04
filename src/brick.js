@@ -8,7 +8,7 @@ export default class Brick {
 	}
 
 	draw(ctx) {
-		ctx.fillStyle = 'green';
+		ctx.fillStyle = 'limegreen';
 		ctx.fillRect(this.position.x, this.position.y, this.width, this.height);
 	}
 

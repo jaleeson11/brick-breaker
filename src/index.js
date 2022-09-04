@@ -13,7 +13,7 @@ game.start();
 
 function gameCanvasInit() {
     ctx.clearRect(0, 0, GAME_WIDTH, GAME_HEIGHT);
-    ctx.fillStyle = "blue";
+    ctx.fillStyle = "black";
     ctx.fillRect(0, 0, GAME_WIDTH, GAME_HEIGHT);
 }
 
