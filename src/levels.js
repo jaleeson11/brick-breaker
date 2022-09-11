@@ -8,7 +8,7 @@ export function buildLevel(level, game) {
 			if(brick === 1) {
 				let position = {
 					x: 50 * brickIndex,
-					y: 20 * rowIndex
+					y: 20 * rowIndex + 20
 				};
 
 				bricks.push(new Brick(game, position))
@@ -20,16 +20,24 @@ export function buildLevel(level, game) {
 }
 
 export const level1 = [
-	[0, 1, 0, 0, 0, 0, 0, 0, 0, 0],
 	[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+	[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+	[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+	[1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+	[0, 1, 0, 1, 0, 1, 0, 1, 0, 1],
+];
+
+export const level2 = [
+	[1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+	[0, 1, 0, 1, 0, 1, 0, 1, 0, 1],
 	[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 	[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 	[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 ];
 
-export const level2 = [
+export const level3 = [
+	[1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
 	[0, 1, 0, 1, 0, 1, 0, 1, 0, 1],
-	[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 	[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 	[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 	[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
