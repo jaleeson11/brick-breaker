@@ -10,11 +10,7 @@ export default class Brick {
 	}
 
 	draw(ctx) {
-		if (this.position.x % 100 === 0) {
-			ctx.fillStyle = 'hotpink';
-		} else {
-			ctx.fillStyle = 'limegreen';
-		}
+		this.position.x % 100 === 0 ? ctx.fillStyle = 'hotpink' : ctx.fillStyle = 'limegreen'
 		ctx.fillRect(this.position.x, this.position.y, this.width, this.height);
 	}
 
