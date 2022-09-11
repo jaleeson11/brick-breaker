@@ -7,3 +7,9 @@ This was a fun coding excercise that provided a good introduction to game develo
 ### Requirements
 
 The only requirement for this game is that it needs to be run on a live web server.
+
+### Usage
+
+Start: Spacebar
+Pause: Esc
+Move Paddle: Right + Left arrow keys
