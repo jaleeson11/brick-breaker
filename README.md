@@ -16,3 +16,7 @@ Start         | Spacebar
 Pause         | Esc
 Move Left     | ←
 Move Right    | →
+
+### Play
+
+<https://jaleeson11.github.io/brick-breaker/>
