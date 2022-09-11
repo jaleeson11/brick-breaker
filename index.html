@@ -13,6 +13,8 @@
 		font-family: 'Press Start 2P', cursive;
 		background-color: #000;
 		text-align: center;
+		margin: 0;
+		padding: 15px;
 	}
 
 	h1 {
@@ -20,12 +22,18 @@
 	}
 
 	#gameCanvas {
-		border: 3px solid limegreen;
+		outline: 3px solid limegreen;
 	}
 
     #gameBall {
         display: none;
     }
+
+	@media screen and (max-width: 768px) {
+		#gameCanvas {
+			width: 100%;
+		}
+	}
 </style>
 <body>
 	<h1>Brick Breaker</h1>

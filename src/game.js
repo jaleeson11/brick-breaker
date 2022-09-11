@@ -7,13 +7,16 @@ const GAMESTATE = {
 	RUNNING: 0,
 	PAUSED: 1,
 	GAMEOVER: 2,
-	MENU: 3
+	MENU: 3,
+	MOBILE: 4,
 }
 export default class Game {
 	constructor(gameWidth, gameHeight) {
 		this.gameWidth = gameWidth;
 		this.gameHeight = gameHeight;
-		this.gamestate = GAMESTATE.MENU;
+		const mediaQuery = window.matchMedia('(max-width: 768px)');
+		if (mediaQuery.matches) this.gamestate = GAMESTATE.MOBILE;
+		else this.gamestate = GAMESTATE.MENU;
 		this.ball = new Ball(this);
 		this.paddle = new Paddle(this);
 		this.bricks = [];
@@ -52,6 +55,10 @@ export default class Game {
 			this.drawOverlay(ctx, 'Press Spacebar to Start');
 		}
 
+		if (this.gamestate == GAMESTATE.MOBILE) {
+			this.drawOverlay(ctx, 'Try me on desktop!');
+		}
+
 		if (this.gamestate == GAMESTATE.GAMEOVER) {
 			this.drawOverlay(ctx, 'Game Over');
 			this.gameObjects = [];
@@ -74,7 +81,7 @@ export default class Game {
 		if (this.gamestate == GAMESTATE.PAUSED ||
 			this.gamestate == GAMESTATE.MENU ||
 			this.gamestate == GAMESTATE.GAMEOVER ||
-			this.gamestate == GAMESTATE.NEXTLEVEL
+			this.gamestate == GAMESTATE.MOBILE
 		) {
 			return;
 		}
