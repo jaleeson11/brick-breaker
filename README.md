@@ -10,6 +10,9 @@ The only requirement for this game is that it needs to be run on a live web serv
 
 ### Usage
 
-Start: Spacebar
-Pause: Esc
-Move Paddle: Right + Left arrow keys
+Action        | Key
+------------- | -------------
+Start         | Spacebar
+Pause         | Esc
+Move Left     | ←
+Move Right    | →
