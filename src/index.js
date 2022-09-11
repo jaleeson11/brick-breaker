@@ -9,7 +9,6 @@ const GAME_HEIGHT = gameCanvas.height;
 gameCanvasInit();
 
 let game = new Game(GAME_WIDTH, GAME_HEIGHT);
-game.start();
 
 function gameCanvasInit() {
     ctx.clearRect(0, 0, GAME_WIDTH, GAME_HEIGHT);

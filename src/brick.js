@@ -1,3 +1,4 @@
+import { collisionDetected } from "./collisionDetection.js";
 export default class Brick {
 	constructor(game, position) {
 		this.width = 50;
@@ -5,6 +6,7 @@ export default class Brick {
 
 		this.position = position;
 		this.game = game;
+		this.markedForDeletion = false;
 	}
 
 	draw(ctx) {
@@ -13,17 +15,10 @@ export default class Brick {
 	}
 
 	update(deltaTime) {
-		let ball = this.game.ball,
-			gameObjects = this.game.gameObjects, 
-			brickLeftSide = this.position.x,
-			brickRightSide = this.position.x + this.width,
-			brickBottom = this.position.y + this.height;
-
-		if (ball.position.y < brickBottom &&
-			ball.position.x >= brickLeftSide &&
-			ball.position.x + ball.size <= brickRightSide) {
+		let ball = this.game.ball;
+		if (collisionDetected(this, ball)) {
 			ball.speed.y = -ball.speed.y;
-			gameObjects.splice(gameObjects.indexOf(this), 1);
+			this.markedForDeletion = true;
 		}
 	}
 }
